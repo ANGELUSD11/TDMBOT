@@ -1,0 +1,13 @@
+import os
+from dotenv import load_dotenv
+
+DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
+DISCORD_CHANNEL = int(os.getenv('DISCORD_CHANNEL'))
+YOUTUBE_API_KEY = os.getenv('YOUTUBE_API_KEY')
+SEARCH_API_KEY = os.getenv('SEARCH_API_KEY')
+CSE_ID = os.getenv('CSE_ID')
+CHANNEL_ID = os.getenv('CHANNEL_ID')
+TESSERACT_CMD = os.getenv('TESSERACT_CMD')
+REDDIT_CLIENT_ID = os.getenv('REDDIT_CLIENT_ID')
+REDDIT_CLIENT_SECRET = os.getenv('REDDIT_CLIENT_SECRET')
+REDDIT_USER_AGENT = os.getenv('REDDIT_USER_AGENT')
