@@ -1,0 +1,11 @@
+discord.py
+discord-easy-commands
+wikipedia
+praw
+asyncio
+requests
+flask
+google-api-python-client
+Pillow
+python-dotenv
+pytesseract
