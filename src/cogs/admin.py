@@ -42,8 +42,7 @@ class Admin(commands.Cog):
         # Respuestas específicas por ID de usuario
         respuestas_especificas = {
             967581989152653372: 'hola ANGELUS',
-            671828689075437589: 'hola nigger',  # **⚠️ Importante: Este término es ofensivo y no debe usarse. Recomendación: eliminar o reemplazar.**
-            580904606771445783: 'hola narizón',
+            671828689075437589: 'hola nigger',  
             706673602950332439: 'hola tipito :3'
         }
 
