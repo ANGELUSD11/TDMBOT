@@ -41,9 +41,7 @@ class Admin(commands.Cog):
 
         # Respuestas específicas por ID de usuario
         respuestas_especificas = {
-            967581989152653372: 'hola ANGELUS',
-            671828689075437589: 'hola nigger',  
-            706673602950332439: 'hola tipito :3'
+            967581989152653372: 'hola ANGELUS'
         }
 
         user_id = message.author.id
