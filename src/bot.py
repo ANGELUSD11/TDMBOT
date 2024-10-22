@@ -408,5 +408,120 @@ async def spotify(ctx, member: discord.Member = None):
 
     else:
         await ctx.send('El usuario mencionado no está escuchando música en Spotify en este momento.')
+
+@bot.command()
+async def dl(ctx, url: str):
+    frames = [
+        "[          ] 0%",
+        "[=         ] 10%",
+        "[==        ] 20%",
+        "[===       ] 30%",
+        "[====      ] 40%",
+        "[=====     ] 50%",
+        "[======    ] 60%",
+        "[=======   ] 70%",
+        "[========  ] 80%",
+        "[========= ] 90%",
+        "[==========] 100%"
+    ]
+
+    loading_message = await ctx.send('Downloading...')
+    
+    for frame in frames:
+        # Edit the message with the current loading frame
+        await loading_message.edit(content=f'Downloading... {frame}')
+        await asyncio.sleep(0.3)
+
+    await loading_message.edit(content='Download complete!')
+
+    # Define la función de gancho de progreso
+    def progress_hook(d):
+        if d['status'] == 'finished':
+            print(f"Finished downloading: {d['filename']}")
+
+    # Configuración de opciones para yt-dlp
+    ydl_opts = {
+        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
+        'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
+        'ffmpeg_location': 'C:/Users/Angel/Downloads/ffmpeg-master-latest-win64-gpl/ffmpeg-master-latest-win64-gpl/bin',
+        'noplaylist': True,
+        'progress_hooks': [progress_hook],
+    }
+
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            ydl.download([url])
+        
+        # Obtén el nombre del archivo descargado
+        filename = f"{ydl.prepare_filename(ydl.extract_info(url))}"
+        
+        # Verifica si el archivo existe
+        if os.path.exists(filename):
+            with open(filename, 'rb') as file:
+                await ctx.send(file=discord.File(file, filename=filename))
+            os.remove(filename)
+        else:
+            await ctx.send("No se pudo encontrar el archivo descargado.")
+
+    except Exception as e:
+        embed = discord.Embed(title='❌ERROR!', description=f'No se pudo enviar el video, puede que sea muy largo o pesado: {e}', color=discord.Color.red())
+        await ctx.send(embed=embed)
+        print(f"Ocurrió un error: {e}")
+
+translator = Translator()
+@bot.command()
+async def translate(ctx, lang: str, *, text: str):
+    try:
+        translation = translator.translate(text=text, dest=lang)
+        await ctx.send(f'**Texto original:** {text}\nTraducción ({lang}): {translation.text}')
+    except Exception as e:
+        await ctx.send(f'Ocurrió un error al traducir')
+
+@bot.command()
+async def translateinfo(ctx):
+    embed = discord.Embed(
+        title='Prefijos de idioma para el comando <>translate',
+        description='Aquí tienes algunos ejemplos de prefijos de idiomas:\n',
+        color=discord.Color.blue()
+    )
+    embed.add_field(name='Español', value='es', inline=True)
+    embed.add_field(name='Inglés', value='en', inline=True)
+    embed.add_field(name='Francés', value='fr', inline=True)
+    embed.add_field(name='Alemán', value='de', inline=True)
+    embed.add_field(name='Italiano', value='it', inline=True)
+    embed.add_field(name='Portugués', value='pt', inline=True)
+    embed.add_field(name='Ruso', value='ru', inline=True)
+    embed.add_field(name='Chino (Simplificado)', value='zh-cn', inline=True)
+    embed.add_field(name='Chino (Tradicional)', value='zh-tw', inline=True)
+    embed.add_field(name='Japonés', value='ja', inline=True)
+    embed.add_field(name='Coreano', value='ko', inline=True)
+    embed.add_field(name='Árabe', value='ar', inline=True)
+    embed.add_field(name='Hindi', value='hi', inline=True)
+    embed.add_field(name='Turco', value='tr', inline=True)
+    embed.add_field(name='Griego', value='el', inline=True)
+    embed.add_field(name='Holandés', value='nl', inline=True)
+    embed.add_field(name='Sueco', value='sv', inline=True)
+
+    embed.add_field(
+        name='Más información sobre los códigos de idioma:',
+        value='[Consulta ISO 639-1](https://es.wikipedia.org/wiki/ISO_639-1)',
+        inline=False
+    )
+
+    await ctx.send(embed=embed)
+
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, discord.ext.commands.errors.MemberNotFound):
+        await ctx.send('No se pudo encontrar el miembro mencionado.')
+    else:
+        raise error
+
+@bot.event
+async def on_command_error(ctx, error):
+    if isinstance(error, discord.ext.commands.errors.CommandNotFound):
+        await ctx.send('El comando mencionado no existe.')
+    else:
+        raise error
         
 bot.run(DISCORD_TOKEN)
