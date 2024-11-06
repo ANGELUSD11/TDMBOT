@@ -11,3 +11,4 @@ python-dotenv
 pytesseract
 translate 
 googletrans
+yt-dlp
