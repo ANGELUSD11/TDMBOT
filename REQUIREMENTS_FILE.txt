@@ -10,4 +10,4 @@ Pillow
 python-dotenv
 pytesseract
 translate 
-google-trans
+googletrans
