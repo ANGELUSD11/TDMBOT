@@ -9,3 +9,5 @@ google-api-python-client
 Pillow
 python-dotenv
 pytesseract
+translate 
+google-trans
