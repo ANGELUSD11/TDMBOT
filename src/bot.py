@@ -73,7 +73,7 @@ async def on_ready():
     check_live_stream.start()
 
 #verify and notify latest video in the channel 
-@tasks.loop(minutes=30)
+@tasks.loop(minutes=5)
 async def check_new_video():
     global last_video_id
     url = f'https://www.googleapis.com/youtube/v3/search?key={YOUTUBE_API_KEY}&channelId={CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=1'
