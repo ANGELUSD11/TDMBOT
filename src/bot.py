@@ -596,9 +596,8 @@ async def dl(ctx, url: str):
         if d['status'] == 'finished':
             print(f"Finished downloading: {d['filename']}")
 
-    cookies_file = '/home/container/cookies.txt'
 
-    # Configuración de opciones para yt-dlp
+    # Configuración de opciones para yt-dlp / opción config yt_dlp
     ydl_opts = {
         'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
         'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
