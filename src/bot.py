@@ -72,6 +72,18 @@ async def on_ready():
     check_new_video.start()
     check_live_stream.start()
 
+@bot.event
+async def on_member_join(member):
+    if member.guild.id == SERVER_ID:
+        channel = member.guild.get_channel(GENERAL_CHANNEL) #obtiene el canal en base a la variable GENERAL_CHANNEL
+        #comprueba la existencia de un canal determinado
+        if channel:
+            await channel.send(f'{member.mention}, bienvenido al servidor!')
+        else:
+            print('No se encontró el canal indicado.')
+    else:
+        print('No se encontró el servidor indicado.')
+
 #verify and notify latest video in the channel 
 @tasks.loop(minutes=5)
 async def check_new_video():
