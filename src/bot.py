@@ -40,6 +40,7 @@ GENERAL_CHANNEL =
 YOUTUBE_API_KEY = ''
 SEARCH_API_KEY = ''
 CSE_ID = ''
+SERVER_ID = ''
 CHANNEL_ID = ''
 
 #user ids in strings
