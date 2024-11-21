@@ -86,6 +86,17 @@ async def on_member_join(member):
     else:
         print('No se encontró el servidor indicado.')
 
+bot.event
+async def on_disconnect():
+    channel_ids = [982093327799312404, 747832973214351382]
+    maintenance_message = 'El bot está por desconectarse debido a mantenimiento, volverá más tarde :)'
+    for channel_id in channel_ids:
+        channel = bot.get_channel(channel_id)
+        if channel:
+            await channel.send(maintenance_message)
+        else:
+            print(f'No se pudo encontrar el canal: {channel_id}')
+
 #verify and notify latest video in the channel 
 @tasks.loop(minutes=5)
 async def check_new_video():
