@@ -32,6 +32,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 intents.members = True
 intents.presences = True
+intents.guilds= True
 bot = commands.Bot(command_prefix = '>', intents = intents)
 
 DISCORD_TOKEN = ''
