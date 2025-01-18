@@ -705,11 +705,18 @@ async def translateinfo(ctx):
 
 @bot.event
 async def on_command_error(ctx, error):
-    if isinstance(error, discord.ext.commands.errors.CommandNotFound):
+    if isinstance(error, discord.ext.commands.errors.CommandOnCooldown):
+        return
+    elif isinstance(error, discord.ext.commands.errors.CommandNotFound):
         await ctx.send('El comando mencionado no existe.')
     elif isinstance(error, discord.ext.commands.MemberNotFound):
         await ctx.send('El miembro mencionado no existe, asegúrate de escribirlo correctamente')
+    elif isinstance(error, discord.ext.commands.MissingRequiredArgument):
+        await ctx.send(f'Falta un argumento requerido: {error.param}')
+    elif isinstance(error, discord.ext.commands.BadArgument):
+        await ctx.send('Error en el argumento proporcionado, verifica que lo escribiste correctamente.')
     else:
-        raise error
+        #registra cualquier otro error en terminal para depuración
+        print(f'Error name exeption: {type(error).__name__} - {error}')
 
 bot.run(DISCORD_TOKEN)
