@@ -395,17 +395,18 @@ async def avatar(ctx, member: discord.Member = None):
     embed.set_image(url=member.display_avatar.url)
     await ctx.send(embed=embed)
 
+bot.remove_command('help')
 @bot.command()
 @commands.cooldown(rate=1, per=12000, type=commands.BucketType.guild)
-async def info(ctx):
+async def help(ctx):
   embed = discord.Embed(title='**HOLA!**', description = 'Soy un bot en desarrollo(versión beta sujeta a cambios) creado por ANGELUS11, mi prefijo es > y lo puedes utilizar para diferentes comandos\n\n>diamond: ¿Quién soy?\n\n>img: Busca una imagen en Google\n\n>google: Hace una búsqueda simple en Google\n\n>yt: Buscar un video en YouTube\n\n>wiki: Buscar un artículo en Wikipedia\n\n>meme/dankmeme/shitpost: Mandar un meme random de Reddit\n\n>cat:Muestra una imagen random de gatitos :3\n\n>avatar: Mostrar el avatar de un usuario\n\n>spotify (username): Ver que está escuchando tú o un miembro en Spotify\n\n>binary: Convierte un valor entero a binario (no se para que quieras esto pero ahi está)\n\n>ocr(local): Extrae texto de imágenes en varios idiomas con el motor Tesseract https://github.com/tesseract-ocr/tesseract \n\n>dl(local): Descarga videos de varios sitios web para enviarlos a discord, usa YT_DLP en local, una herramienta de código abierto utilizada para descargar videos en múltiples sitios web https://github.com/yt-dlp/yt-dlp \n\n>translate(prefijo de idioma, texto), traduce texto en distintos idiomas\n\n>madewith: Información técnica sobre el bot\n\nRedes de ANGELUS: https://angelusd11.github.io/', 
   color=discord.Color.green())
   embed.set_image(url='https://panels.twitch.tv/panel-792145813-image-ec083130-b0fd-42ab-a88d-250e6ebe5c80')
   embed.set_footer(text='Este comando tiene cooldown de 3 horas')
   await ctx.send(embed = embed)
 
-@info.error
-async def on_command_error(ctx, error):
+@help.error
+async def help_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         tiempo_restante = round(error.retry_after)
         await ctx.send(f"Debes esperar {tiempo_restante} segundos antes de usar el comando nuevamente.")
