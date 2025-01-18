@@ -222,7 +222,7 @@ async def diamond (ctx):
         await ctx.send('No tienes permiso para ejecutar este comando.')
 
 @diamond.error
-async def on_command_error(ctx, error):
+async def diamond_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         tiempo_restante = round(error.retry_after)
         await ctx.send(f"Debes esperar {tiempo_restante} segundos antes de usar el comando nuevamente.")
@@ -421,7 +421,7 @@ async def madewith(ctx):
   await ctx.send(embed=embed)
 
 @madewith.error
-async def on_command_error(ctx, error):
+async def madewith_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         tiempo_restante = round(error.retry_after)
         await ctx.send(f"Debes esperar {tiempo_restante} segundos antes de usar el comando nuevamente.")
@@ -438,7 +438,7 @@ async def redes (ctx):
         await ctx.send('No tienes permiso para ejecutar este comando')
 
 @redes.error
-async def on_command_error(ctx, error):
+async def redes_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         tiempo_restante = round(error.retry_after)
         await ctx.send(f"Debes esperar {tiempo_restante} segundos antes de usar el comando nuevamente.")
@@ -454,7 +454,7 @@ async def ytchannel (ctx):
         await ctx.send('No tienes permiso para ejecutar este comando')
 
 @yt.error
-async def on_command_error(ctx, error):
+async def yt_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         tiempo_restante = round(error.retry_after)
         await ctx.send(f"Debes esperar {tiempo_restante} segundos antes de usar el comando nuevamente.")
@@ -470,7 +470,7 @@ async def twitch (ctx):
         await ctx.send('No tienes permiso para ejecutar este comando.')
 
 @twitch.error
-async def on_command_error(ctx, error):
+async def twitch_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         tiempo_restante = round(error.retry_after)
         await ctx.send(f"Debes esperar {tiempo_restante} segundos antes de usar el comando nuevamente.")
