@@ -14,6 +14,7 @@ import pytesseract
 from io import BytesIO
 import asyncio
 import requests
+import google.generativeai as genai
 from discord_easy_commands import EasyBot
 from discord.gateway import EventListener
 from discord import app_commands, Interaction
