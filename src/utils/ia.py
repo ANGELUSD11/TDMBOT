@@ -16,7 +16,7 @@ intents.presences = True
 intents.guilds= True
 bot = commands.Bot(command_prefix = '>', intents = intents)
 
-GEMINI_API_KEY = 'AIzaSyBW4ZB-F62rFw0wJ_st_E_dza-pTIRjRR8'
+GEMINI_API_KEY = ''
 
 genai.configure(api_key= GEMINI_API_KEY)
 model = genai.GenerativeModel('Gemini-1.5-flash')
