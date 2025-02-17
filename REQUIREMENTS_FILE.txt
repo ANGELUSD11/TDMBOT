@@ -12,3 +12,4 @@ pytesseract
 translate 
 googletrans
 yt-dlp
+google-generativeai
