@@ -6,6 +6,7 @@ from discord.ext import commands
 from discord.ext import tasks
 from dotenv import load_dotenv
 import requests
+import grpc
 import logging
 logging.basicConfig(level=logging.INFO)
 
@@ -63,6 +64,16 @@ async def on_ready():
 
     check_new_video.start()
     check_live_stream.start()
+
+@bot.event
+async def on_shutdown():
+    print('Closing conexions...')
+    try:
+        grpc.shutdown()
+    except Exception as e:
+        print(f'Error: {e}')
+
+    print('Bot shutdown.')
 
 @bot.event
 async def on_member_join(member):
