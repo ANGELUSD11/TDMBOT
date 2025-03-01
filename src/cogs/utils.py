@@ -116,14 +116,32 @@ class UtilsCog(commands.Cog):
             if d['status'] == 'finished':
                 print(f"Finished downloading: {d['filename']}")
 
-        #yt_dlp config options
-        ydl_opts = {
-            'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
-            'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
-            'ffmpeg_location': '/home/container/ffmpeg/bin',
-            'noplaylist': True,
-            'progress_hooks': [progress_hook]
-        }
+        #options for downloads
+        if 'instagram.com' in url:
+            ydl_opts = {
+                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
+                'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
+                'ffmpeg_location': '/home/container/ffmpeg/bin',
+                'noplaylist': True,
+                'progress_hooks': [progress_hook]
+            }
+
+        elif 'youtube.com' in url:
+            ydl_opts = {
+                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
+                'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
+                'ffmpeg_location': '/home/container/ffmpeg/bin',
+                'noplaylist': True,
+                'progress_hooks': [progress_hook]
+            }
+        else:
+            ydl_opts = {
+                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
+                'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
+                'ffmpeg_location': '/home/container/ffmpeg/bin',
+                'noplaylist': True,
+                'progress_hooks': [progress_hook]
+            }
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
