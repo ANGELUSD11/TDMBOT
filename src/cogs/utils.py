@@ -63,14 +63,14 @@ class UtilsCog(commands.Cog):
                 img = Image.open(BytesIO(response.content))
 
                 text = pytesseract.image_to_string(img, lang='eng+rus+ara+afr+amh+asm+aze_cyrl+bel+bod+bos+bre+bul+cat+ceb+ces+'
-                                                            'chi_sim+chi_sim_vert+chr+cos+cym+dan+dan_frak+deu+deu_frak+deu_latf'
-                                                            '+div+dzo+ell+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frm+fry+gla+gle+'
+                                                            'chi_sim+chi_sim_vert+chr+cos+cym+dan+dan_frak+deu+deu_frak+deu_latf+'
+                                                            'div+dzo+ell+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frm+fry+gla+gle+'
                                                             'glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku++ind+isl+ita+ita_old+jav+jpn+'
                                                             'jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+'
-                                                            'ltz+mal+mar+mkd+mlt+mon+mri+msa+mya+nep+nld+nor+oci+ori+osd+pan+pol+por'
-                                                            '+pus+que+ron+san+sin+slk+slk_frak+slv+snd+spa+spa_old+sqi+srp+srp_latn+'
-                                                            'sun+swa+swe+syr+tam+tat+tel+tgk+tgl+tha+tir+ton+tur+uig+ukr+urd++uzb+uzb_cyrl'
-                                                            '+vie+yid+yor')
+                                                            'ltz+mal+mar+mkd+mlt+mon+mri+msa+mya+nep+nld+nor+oci+ori+osd+pan+pol+por+'
+                                                            'pus+que+ron+san+sin+slk+slk_frak+slv+snd+spa+spa_old+sqi+srp+srp_latn+'
+                                                            'sun+swa+swe+syr+tam+tat+tel+tgk+tgl+tha+tir+ton+tur+uig+ukr+urd++uzb+uzb_cyrl+'
+                                                            'vie+yid+yor')
 
                 if text.strip():
                     embed = discord.Embed(title='Texto extraido', description=text[:1024], color=discord.Color.green())
