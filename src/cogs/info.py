@@ -87,7 +87,7 @@ class InfoCog(commands.Cog):
         await ctx.send(embed=embed)
 
     @commands.command()
-    async def binary(self, ctx, number: str):
+    async def binary(self, ctx, *, number: str):
         try:
             entero = int(number)
             binario = bin(entero)[2:]
