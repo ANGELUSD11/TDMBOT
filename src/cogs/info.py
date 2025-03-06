@@ -65,7 +65,7 @@ class InfoCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(1, 60, commands.BucketType.user)
-    async def chat(self, ctx, mensaje: str = None):
+    async def chat(self, ctx, *, mensaje: str = None):
         if not mensaje:
             await ctx.send('Dí algo para que el bot lo replique.')
             return
