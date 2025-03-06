@@ -165,6 +165,7 @@ class UtilsCog(commands.Cog):
     @commands.command()
     @commands.cooldown(rate=1, per=600, type=commands.BucketType.user)
     async def translate(self, ctx, lang: str, *, text: str=None):
+        #this list contains all the valid language codes
         valid_lang = ['aa', 'ab', 'ae', 'af', 'ak', 'am', 'an', 'ar', 'as',
                       'av', 'ay', 'az', 'ba', 'be', 'bg', 'bh', 'bi', 'bm', 
                       'bn', 'bo', 'br', 'bs', 'ca', 'ce', 'ch', 'co', 'cr', 
