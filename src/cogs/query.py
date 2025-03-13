@@ -22,6 +22,9 @@ class QueryCog(commands.Cog):
 
     @commands.command()
     async def yt(self, ctx, *, search_query):
+        if not search_query:
+            await ctx.send('Please enter a search term')
+            return
         search_url = f"https://www.googleapis.com/youtube/v3/search?part=snippet&q={search_query}&key={self.youtube_api_key}&type=video&maxResults=1&safeSearch=strict"
         search_response = requests.get(search_url).json()
 
@@ -54,6 +57,9 @@ class QueryCog(commands.Cog):
 
     @commands.command()
     async def img(self, ctx, *, query):
+        if not query:
+            await ctx.send('Please enter a search term')
+            return
         try:
             service = googleapiclient.discovery.build('customsearch', 'v1', developerKey=self.search_api_key)
 
@@ -80,6 +86,9 @@ class QueryCog(commands.Cog):
 
     @commands.command()
     async def google(self, ctx, *, query):
+        if not query:
+            await ctx.send('Please enter a search term')
+            return
         try:
             service = googleapiclient.discovery.build('customsearch', 'v1', developerKey=self.search_api_key)
             res = service.cse().list(
