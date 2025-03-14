@@ -21,7 +21,7 @@ class QueryCog(commands.Cog):
         youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey = self.youtube_api_key)
 
     @commands.command()
-    async def yt(self, ctx, *, search_query):
+    async def yt(self, ctx, *, search_query=None):
         if not search_query:
             await ctx.send('Please enter a search term')
             return
@@ -56,7 +56,7 @@ class QueryCog(commands.Cog):
             await ctx.send('No se encontraron videos')
 
     @commands.command()
-    async def img(self, ctx, *, query):
+    async def img(self, ctx, *, query=None):
         if not query:
             await ctx.send('Please enter a search term')
             return
@@ -85,7 +85,7 @@ class QueryCog(commands.Cog):
             await ctx.send(f'Ha ocurrido un error al buscar la imagen {e}')
 
     @commands.command()
-    async def google(self, ctx, *, query):
+    async def google(self, ctx, *, query=None):
         if not query:
             await ctx.send('Please enter a search term')
             return
