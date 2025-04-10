@@ -200,8 +200,8 @@ class UtilsCog(commands.Cog):
             return
         
         try:
-            translated = GoogleTranslator(source='auto', target=lang).translate(text=text)
-            await ctx.send(f"**Texto original:** {text}\n**Traducción a {lang}:** {translated}")
+            for i in range(0, len(translated), 2000):
+                await ctx.send(f"**Texto original:** {text}\n**Traducción a {lang}:** {translated[i:i+2000]}")
         except Exception as e:
             await ctx.send('Ocurrió un error al traducir, intentelo más tarde.')
             print(e)
