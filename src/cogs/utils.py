@@ -2,7 +2,7 @@ import discord
 import discord.ext
 import os
 from discord.ext import commands
-import pytesseract
+import tesserocr
 import requests
 import asyncio
 import yt_dlp
@@ -17,7 +17,6 @@ intents.members = True
 intents.presences = True
 intents.guilds= True
 
-pytesseract.pytesseract.tesseract_cmd = r'/home/container/Tesseract-OCR/tesseract.exe'
 model = genai.GenerativeModel("gemini-1.5-flash")
 #chat = model.start_chat(history=[])
 
@@ -62,7 +61,7 @@ class UtilsCog(commands.Cog):
                 response = requests.get(image_url)
                 img = Image.open(BytesIO(response.content))
 
-                text = pytesseract.image_to_string(img, lang='eng+rus+ara+afr+amh+asm+aze_cyrl+bel+bod+bos+bre+bul+cat+ceb+ces+'
+                text = tesserocr.image_to_text(img, lang='eng+rus+ara+afr+amh+asm+aze_cyrl+bel+bod+bos+bre+bul+cat+ceb+ces+'
                                                             'chi_sim+chi_sim_vert+chr+cos+cym+dan+dan_frak+deu+deu_frak+deu_latf+'
                                                             'div+dzo+ell+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frm+fry+gla+gle+'
                                                             'glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku++ind+isl+ita+ita_old+jav+jpn+'
