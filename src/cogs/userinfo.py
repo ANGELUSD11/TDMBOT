@@ -10,7 +10,7 @@ intents.members = True
 intents.presences = True
 intents.guilds= True
 SERVER_ID = int(os.getenv("SERVER_ID", 0))
-CHANNEL_ID = int(os.getenv("CHANNEL_ID", 0))
+CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 class WelcomeCog(commands.Cog):
     def __init__(self, bot):
