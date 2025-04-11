@@ -28,7 +28,21 @@ class UtilsCog(commands.Cog):
 
     @commands.command()
     @commands.cooldown(1, 10, commands.BucketType.user)
-    async def ocr(self, ctx):
+    async def ocr(self, ctx, lang="eng"):
+
+        idiomas_disponibles = [
+        "spa", "eng", "ara", "afr", "rus", "chi_sim", "chi_tra", "fra", "deu", "ita", "jpn",
+        "kor", "hin", "tur", "por", "nld", "ukr", "pol", "ces", "dan", "swe", "nor",
+        "fin", "hun", "bul", "gre", "heb", "tha", "vie", "ind", "mal", "tam", "tel",
+        "ben", "urd", "amh", "mya", "nep", "mar", "kan", "guj", "ori", "pan", "sin",
+        "khm", "lao", "tat", "uzb", "aze", "kat", "mon", "bos", "slv", "lit", "lav",
+        "est", "isl", "sqi", "mkd", "bre", "cor", "glg", "eus", "fao", "mri", "swa"
+        ]
+
+        if lang not in idiomas_disponibles:
+            await ctx.send(f"❌ Idioma no válido. Usa: {', '.join(idiomas_disponibles)}.")
+            return
+        
         frames = [
             "[          ] 0%",
             "[=         ] 10%",
@@ -60,16 +74,12 @@ class UtilsCog(commands.Cog):
 
                 response = requests.get(image_url)
                 img = Image.open(BytesIO(response.content))
+                image_path = "/tmp/temp_image.png"
+                img.save(image_path)
 
-                text = tesserocr.image_to_text(img, lang='eng+rus+ara+afr+amh+asm+aze_cyrl+bel+bod+bos+bre+bul+cat+ceb+ces+'
-                                                            'chi_sim+chi_sim_vert+chr+cos+cym+dan+dan_frak+deu+deu_frak+deu_latf+'
-                                                            'div+dzo+ell+enm+epo+equ+est+eus+fao+fas+fil+fin+fra+frm+fry+gla+gle+'
-                                                            'glg+grc+guj+hat+heb+hin+hrv+hun+hye+iku++ind+isl+ita+ita_old+jav+jpn+'
-                                                            'jpn_vert+kan+kat+kat_old+kaz+khm+kir+kmr+kor+kor_vert+lao+lat+lav+lit+'
-                                                            'ltz+mal+mar+mkd+mlt+mon+mri+msa+mya+nep+nld+nor+oci+ori+osd+pan+pol+por+'
-                                                            'pus+que+ron+san+sin+slk+slk_frak+slv+snd+spa+spa_old+sqi+srp+srp_latn+'
-                                                            'sun+swa+swe+syr+tam+tat+tel+tgk+tgl+tha+tir+ton+tur+uig+ukr+urd++uzb+uzb_cyrl+'
-                                                            'vie+yid+yor')
+                with tesserocr.PyTessBaseAPI(lang=lang, path="/home/container/Tesseract-OCR/tessdata") as api:
+                    api.SetImageFile(image_path)
+                    text = api.GetUTF8Text()
 
                 if text.strip():
                     embed = discord.Embed(title='Texto extraido', description=text[:1024], color=discord.Color.green())
@@ -79,6 +89,10 @@ class UtilsCog(commands.Cog):
 
             except Exception as e:
                 await ctx.send(f'Ocurrió un error al procesar la imagen: {str(e)}.')
+
+            finally:
+                if os.path.exists(image_path):
+                    os.remove(image_path)
         else:
             await ctx.send('Por favor adjunta una imagen a procesar.')
 
