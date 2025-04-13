@@ -76,17 +76,6 @@ async def on_shutdown():
     print('Bot shutdown.')
 
 @bot.event
-async def on_member_join(member):
-    if member.guild.id == SERVER_ID:
-        channel = member.guild.get_channel(GENERAL_CHANNEL)
-        if channel:
-            await channel.send(f'{member.mention}, bienvenido al servidor!/ welcome to the server! :D')
-        else:
-            print('No se encontró el canal indicado.')
-    else:
-        print('No se encontró el servidor indicado.')
-
-@bot.event
 async def on_message(message):
     if message.author == bot.user:
         return
