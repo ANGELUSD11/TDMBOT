@@ -41,6 +41,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 
 ## Tecnologías y librerías utilizadas⌨️  
 - asyncio(módulo por defecto de Python para manejar concurrencia y asincronismo)
+- [python-dotenv](https://pypi.org/project/python-dotenv/)(librería para cargar variables de entorno)
 - [Wikipedia](https://pypi.org/project/wikipedia/)(API de Wikipedia)
 - [praw](https://pypi.org/project/praw/)(API de Reddit)
 - [requests](https://pypi.org/project/requests/)(librería para el manejo de solicitudes http)
