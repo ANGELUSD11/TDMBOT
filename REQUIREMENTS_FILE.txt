@@ -8,7 +8,7 @@ flask
 google-api-python-client
 Pillow
 python-dotenv
-pytesseract
+tesserocr
 translate 
 googletrans
 yt-dlp
