@@ -74,7 +74,7 @@ In my case, I have integrated this with even more well-known libraries widely us
 
 
 ## Limitations to consider💡
-1: The command ```>dl``` cannot download content from YouTube since the site detects the bot’s requests as automated traffic. I'm working on fixing this.
+1: The command ```>dl``` cannot download content from YouTube since the site detects the bot’s requests as automated traffic. I'm working on fixing this.  
 2: You must provide all required parameters for certain commands:
 - For ```>translate```, you must use language codes following the [ISO 639-1](https://es.wikipedia.org/wiki/ISO_639-1) standard
 - For ```>ocr```, you must use the language codes used in [Tesseract's traineddata](https://github.com/tesseract-ocr/tessdata) files
