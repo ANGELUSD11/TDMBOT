@@ -92,7 +92,7 @@ In my case, I have integrated this with even more well-known libraries widely us
 - For ```>ocr```, you must use the language codes used in [Tesseract's traineddata](https://github.com/tesseract-ocr/tessdata) files
 
 ## Technologies and Libraries Used⌨️  
-- `asyncio` (Python’s default module for handling concurrency and asynchronous programming)  
+- asyncio (Python’s default module for handling concurrency and asynchronous programming)  
 - [python-dotenv](https://pypi.org/project/python-dotenv/) (library for loading environment variables)  
 - [Wikipedia](https://pypi.org/project/wikipedia/) (Wikipedia API)  
 - [praw](https://pypi.org/project/praw/) (Reddit API)  
