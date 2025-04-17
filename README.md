@@ -39,6 +39,17 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 - En ```>translate``` tienes que agregar los códigos de idioma siguiendo el estandar [ISO 639-1](https://es.wikipedia.org/wiki/ISO_639-1)
 - En ```>ocr``` tienes que agregar los códigos de idioma que se usan en los traineddata de [Tesseract](https://github.com/tesseract-ocr/tessdata)
 
+## Tecnologías y librerías utilizadas⌨️  
+- asyncio(módulo por defecto de Python para manejar concurrencia y asincronismo)
+- [Wikipedia](https://pypi.org/project/wikipedia/)(API de Wikipedia)
+- [praw](https://pypi.org/project/praw/)(API de Reddit)
+- [requests](https://pypi.org/project/requests/)(librería para el manejo de solicitudes http)
+- [google-api-python-client](https://pypi.org/project/google-api-python-client/)(API de Google)
+- [tesserocr](https://pypi.org/project/tesserocr/)(implementación del motor Tesseract-OCR para el procesamiento óptico de carácteres)
+- [yt-dlp](https://pypi.org/project/yt-dlp/)(Implementación de la herramienta de CLI yt-dlp, usada para la descarga de videos)
+- [deep-translator](https://pypi.org/project/deep-translator/)(API del traductor de deep)
+- [google-generativeai](https://pypi.org/project/google-generativeai/)(SDK oficial de Google para interactuar con sus LLMs por medio de su API)
+
 
 ---
 
