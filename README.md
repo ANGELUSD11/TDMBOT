@@ -13,7 +13,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 
 ```bash
 >help: Para visualizar todos los comandos e información general del bot
->ia(prompt): Consultar cualquier duda o interactuar con el modelo Gémini 1.5 flash de Google
+>ia(prompt): Consultar cualquier duda o interactuar con el modelo Gémini 1.5 flash de Google, puedes adjuntar imágenes
 >wiki(query): Búsqueda de algún artículo en Wikipedia
 >img(query): Búsqueda de imágenes en Google
 >yt(query): Búsqueda de videos en YouTube
@@ -65,7 +65,7 @@ In my case, I have integrated this with even more well-known libraries widely us
 
 ```
 >help: View all commands and general information about the bot
->ia(prompt): Ask any question or interact with Google’s Gemini 1.5 flash model
+>ia(prompt): Ask any question or interact with Google’s Gemini 1.5 flash model you can attach images
 >wiki(query): Search for a Wikipedia article
 >img(query): Search for images on Google
 >yt(query): Search for YouTube videos
