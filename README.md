@@ -44,7 +44,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 - [python-dotenv](https://pypi.org/project/python-dotenv/)(librería para cargar variables de entorno)
 - [Wikipedia](https://pypi.org/project/wikipedia/)(API de Wikipedia)
 - [praw](https://pypi.org/project/praw/)(API de Reddit)
-- [requests](https://pypi.org/project/requests/)(librería para el manejo de solicitudes http)
+- [requests](https://pypi.org/project/requests/)(librería para el manejo de solicitudes HTTP)
 - [google-api-python-client](https://pypi.org/project/google-api-python-client/)(API de Google)
 - [tesserocr](https://pypi.org/project/tesserocr/)(implementación del motor Tesseract-OCR para el procesamiento óptico de carácteres)
 - [yt-dlp](https://pypi.org/project/yt-dlp/)(implementación de la herramienta de CLI yt-dlp, usada para la descarga de videos)
@@ -90,3 +90,16 @@ In my case, I have integrated this with even more well-known libraries widely us
 2: You must provide all required parameters for certain commands:
 - For ```>translate```, you must use language codes following the [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) standard
 - For ```>ocr```, you must use the language codes used in [Tesseract's traineddata](https://github.com/tesseract-ocr/tessdata) files
+
+## Technologies and Libraries Used⌨️  
+- `asyncio` (Python’s default module for handling concurrency and asynchronous programming)  
+- [python-dotenv](https://pypi.org/project/python-dotenv/) (library for loading environment variables)  
+- [Wikipedia](https://pypi.org/project/wikipedia/) (Wikipedia API)  
+- [praw](https://pypi.org/project/praw/) (Reddit API)  
+- [requests](https://pypi.org/project/requests/) (library for handling HTTP requests)  
+- [google-api-python-client](https://pypi.org/project/google-api-python-client/) (Google API client library)  
+- [tesserocr](https://pypi.org/project/tesserocr/) (Tesseract-OCR engine implementation for optical character recognition)  
+- [yt-dlp](https://pypi.org/project/yt-dlp/) (CLI tool implementation for downloading videos)  
+- [deep-translator](https://pypi.org/project/deep-translator/) (API wrapper for DeepL and other translation services)  
+- [google-generativeai](https://pypi.org/project/google-generativeai/) (Official Google SDK for interacting with their LLMs via API)  
+
