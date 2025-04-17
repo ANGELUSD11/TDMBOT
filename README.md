@@ -11,7 +11,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 
 ## Comandos disponibles📝    
 
-```bash
+```
 >help: Para visualizar todos los comandos e información general del bot
 >ia(prompt): Consultar cualquier duda o interactuar con el modelo Gémini 1.5 flash de Google, puedes adjuntar imágenes
 >wiki(query): Búsqueda de algún artículo en Wikipedia
