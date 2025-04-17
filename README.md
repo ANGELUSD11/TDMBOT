@@ -51,7 +51,7 @@ In my case, I have integrated this with even more well-known libraries widely us
 
 ## Available commands📝
 
-```bash
+```
 >help: View all commands and general information about the bot
 >ia(prompt): Ask any question or interact with Google’s Gemini 1.5 flash model
 >wiki(query): Search for a Wikipedia article
