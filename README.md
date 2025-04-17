@@ -96,8 +96,8 @@ In my case, I have integrated this with even more well-known libraries widely us
 ## Technologies and Libraries Used⌨️  
 - asyncio (Python’s default module for handling concurrency and asynchronous programming)  
 - [python-dotenv](https://pypi.org/project/python-dotenv/) (library for loading environment variables)  
-- [Wikipedia](https://pypi.org/project/wikipedia/) (Wikipedia API)  
-- [praw](https://pypi.org/project/praw/) (Reddit API)
+- [Wikipedia](https://pypi.org/project/wikipedia/) (Wikipedia API wrapper)  
+- [praw](https://pypi.org/project/praw/) (Reddit API wrapper)
 - [pillow](https://pypi.org/project/pillow/) (library for image processing)
 - [requests](https://pypi.org/project/requests/) (library for handling HTTP requests)  
 - [google-api-python-client](https://pypi.org/project/google-api-python-client/) (Google API client library)  
