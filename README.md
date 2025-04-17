@@ -13,6 +13,7 @@ TDMBOT es un bot de discord creado desde 0 con Python y con ayuda de la librerí
 
 ```bash
 >help: Para visualizar todos los comandos e información general del bot
+>ia(prompt): Consultar cualquier duda o interactuar con el modelo Gémini 1.5 flash de Google
 >wiki(query): Búsqueda de algún artículo en Wikipedia
 >img(query): Búsqueda de imágenes en Google
 >yt(query): Búsqueda de videos en YouTube
@@ -26,3 +27,14 @@ TDMBOT es un bot de discord creado desde 0 con Python y con ayuda de la librerí
 >ocr(language code): Extrae texto de imágenes en distintos idiomas, especificados con su código de idioma
 >translate(language: text): Traduce texto en distintos idiomas especificado el código de idioma a traducir
 >dl(url): Descarga video de distintos sitios web y lo muestra en chat
+```
+
+
+---
+
+
+## Limitaciones a considerar💡  
+1: El comando ```bash>dl``` no puede descargar contenido de YouTube ya que el sitio detecta las solicitudes del bot como tráfico automatizado, estoy trabajando en arreglar esto  
+2: Tienes que agregar todos los parámetros necesarios en ciertos comandos  
+- En ```bash>translate``` tienes que agregar los códigos de idioma siguiendo el estandar [ISO 639-1](https://es.wikipedia.org/wiki/ISO_639-1)
+- En ```bash>ocr``` tienes que agregar los códigos de idioma que se usan en los traineddata de [tesseract](https://github.com/tesseract-ocr/tessdata)
