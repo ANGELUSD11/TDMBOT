@@ -55,13 +55,17 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 
 ## Primeros pasos↗️  
 Puedes invitar el bot a tu servidor mediante el [enlace de invitación](https://discord.com/oauth2/authorize?client_id=1146866029708984331) de manera sencilla, sin embargo, si quieres levantar el proyecto localmente usando todos tus tokens, puedes hacerlo de la siguiente manera:  
-1: Asegúrate de tener Python correctamente instalado y configurado en tu IDE favorito😃  
-2: Clona el repositorio o descarga el fichero
-```git clone https://github.com/ANGELUSD11/TDMBOT.git```  
-3: Instala todos los paquetes necesarios con pip mediante el .txt que he dejado
-```pip install requirements.txt```  
-4: Reemplaza todos tus tokens y api keys en el archivo ```.env``` para que el bot pueda consumir sus APIs(cuidado👀, recuerda que estos datos son sensibles y no se pueden exponer)  
-5: Ejecuta el script ```bot.py``` que se encuentra en ```/src/bot.py```  
+1. Asegúrate de tener Python correctamente instalado y configurado en tu IDE favorito😃  
+2. Clona el repositorio o descarga el fichero
+```bash
+git clone https://github.com/ANGELUSD11/TDMBOT.git
+```  
+3. Instala todos los paquetes necesarios con pip mediante el .txt que he dejado
+```bash
+pip install requirements.txt
+```  
+4. Reemplaza todos tus tokens y api keys en el archivo ```.env``` para que el bot pueda consumir sus APIs(cuidado👀, recuerda que estos datos son sensibles y no se pueden exponer)  
+5. Ejecuta el script ```bot.py``` que se encuentra en ```/src/bot.py```  
 Este script contiene un bucle for que recorre todos los módulos del bot divididos en cogs y luego informa en terminal si se ejecutaron correctamente.
 
 
@@ -126,6 +130,10 @@ However, if you want to run the project locally using your own tokens, you can d
 ```bash
 git clone https://github.com/ANGELUSD11/TDMBOT.git
 ```
+3. Install all required packages with pip using the provided .txt file
+```bash
+pip install requirements.txt
+```  
 4. Replace all your tokens and API keys in the ```.env``` file so the bot can access its APIs
 (Careful 👀, remember these are sensitive values and should not be exposed)
 5. Run the ```bot.py``` script located in ```/src/bot.py```
