@@ -53,6 +53,17 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 - [deep-translator](https://pypi.org/project/deep-translator/)(API del traductor de deep)
 - [google-generativeai](https://pypi.org/project/google-generativeai/)(SDK oficial de Google para interactuar con sus LLMs por medio de su API)
 
+## Primeros pasos↗️  
+Puedes invitar el bot a tu servidor mediante el [enlace de invitación](https://discord.com/oauth2/authorize?client_id=1146866029708984331) de manera sencilla, sin embargo, si quieres levantar el proyecto localmente usando todos tus tokens, puedes hacerlo de la siguiente manera:  
+1: Asegúrate de tener Python correctamente instalado y configurado en tu IDE favorito😃  
+2: Clona el repositorio o descarga el fichero
+```git clone https://github.com/ANGELUSD11/TDMBOT.git```  
+3: Instala todos los paquetes necesarios con pip mediante el .txt que he dejado
+```pip install requirements.txt```  
+4: Reemplaza todos tus tokens y api keys en el archivo ```.env``` para que el bot pueda consumir sus APIs(cuidado👀, recuerda que estos datos son sensibles y no se pueden exponer)  
+5: Ejecuta el script bot.py que se encuentra en ```/src/bot.py```  
+Este script contiene un bucle for que recorre todos los módulos del bot divididos en cog y luego informa en terminal si se ejecutaron correctamente.
+
 
 ---
 
