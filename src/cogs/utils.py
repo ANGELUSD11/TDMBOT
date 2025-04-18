@@ -265,6 +265,13 @@ class UtilsCog(commands.Cog):
             await ctx.send('Escribe algo para preguntarle a la IA de Gemini.')
             return
         try:
+            contexto_base = (
+                "Estás integrada en un bot de Discord desarrollado por ANGELUS11, un desarrollador colombiano. "
+                "Responde siempre de forma clara, concisa y útil. "
+            )
+
+            prompt_final = f'{contexto_base} Usuario: {prompt}'
+            
             if ctx.message.attachments:
                 image_url = ctx.message.attachments[0].url
                 img_response = requests.get(image_url)
@@ -272,9 +279,7 @@ class UtilsCog(commands.Cog):
 
                 image = Image.open(BytesIO(image_bytes))
 
-                prompt = f'Responde única y exclusivamente en español, no uses otros idiomas: {prompt}'
-
-                img_iaresponse = model.generate_content([prompt, image])
+                img_iaresponse = model.generate_content([prompt_final, image])
 
                 text = img_iaresponse.text
 
@@ -282,7 +287,7 @@ class UtilsCog(commands.Cog):
                     await ctx.send(text[i:i+2000])
 
             else:
-                response = model.generate_content(prompt)
+                response = model.generate_content(prompt_final)
                 text = response.text
                 for i in range(0, len(text), 2000):
                     await ctx.send(text[i:i+2000])
