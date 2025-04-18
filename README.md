@@ -61,8 +61,8 @@ Puedes invitar el bot a tu servidor mediante el [enlace de invitación](https://
 3: Instala todos los paquetes necesarios con pip mediante el .txt que he dejado
 ```pip install requirements.txt```  
 4: Reemplaza todos tus tokens y api keys en el archivo ```.env``` para que el bot pueda consumir sus APIs(cuidado👀, recuerda que estos datos son sensibles y no se pueden exponer)  
-5: Ejecuta el script bot.py que se encuentra en ```/src/bot.py```  
-Este script contiene un bucle for que recorre todos los módulos del bot divididos en cog y luego informa en terminal si se ejecutaron correctamente.
+5: Ejecuta el script ```bot.py``` que se encuentra en ```/src/bot.py```  
+Este script contiene un bucle for que recorre todos los módulos del bot divididos en cogs y luego informa en terminal si se ejecutaron correctamente.
 
 
 ---
@@ -115,5 +115,18 @@ In my case, I have integrated this with even more well-known libraries widely us
 - [tesserocr](https://pypi.org/project/tesserocr/) (Tesseract-OCR engine implementation for optical character recognition)  
 - [yt-dlp](https://pypi.org/project/yt-dlp/) (CLI tool implementation for downloading videos)  
 - [deep-translator](https://pypi.org/project/deep-translator/) (API wrapper for DeepL and other translation services)  
-- [google-generativeai](https://pypi.org/project/google-generativeai/) (Official Google SDK for interacting with their LLMs via API)  
+- [google-generativeai](https://pypi.org/project/google-generativeai/) (Official Google SDK for interacting with their LLMs via API)
 
+## Getting Started ↗️  
+You can easily invite the bot to your server using the [invitation link](https://discord.com/oauth2/authorize?client_id=1146866029708984331).  
+However, if you want to run the project locally using your own tokens, you can do so as follows:  
+
+1. Make sure you have Python properly installed and configured in your favorite IDE 😃  
+2. Clone the repository or download the file  
+```bash
+git clone https://github.com/ANGELUSD11/TDMBOT.git
+```
+4. Replace all your tokens and API keys in the ```.env``` file so the bot can access its APIs
+(Careful 👀, remember these are sensitive values and should not be exposed)
+5. Run the ```bot.py``` script located in ```/src/bot.py```
+This script contains a for loop that loads all the bot’s modules (organized in cogs) and then logs in the terminal if they were loaded successfully.
