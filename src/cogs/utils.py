@@ -1,4 +1,6 @@
 import discord
+from discord import FFmpegPCMAudio
+from ..core.ttsengine import generate_speech
 import discord.ext
 import os
 from discord.ext import commands
@@ -24,6 +26,8 @@ class UtilsCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.gemini_api = os.getenv("GEMINI_API_KEY")
+        self.ffmpeg_path = os.getenv("FFMPEG_PATH")
+
         genai.configure(api_key= self.gemini_api)
 
     @commands.command()
@@ -138,15 +142,7 @@ class UtilsCog(commands.Cog):
                 'noplaylist': True,
                 'progress_hooks': [progress_hook]
             }
-
-        elif 'youtube.com' in url:
-            ydl_opts = {
-                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
-                'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
-                'ffmpeg_location': '/home/container/ffmpeg/bin',
-                'noplaylist': True,
-                'progress_hooks': [progress_hook]
-            }
+            
         else:
             ydl_opts = {
                 'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
@@ -291,6 +287,20 @@ class UtilsCog(commands.Cog):
                 text = response.text
                 for i in range(0, len(text), 2000):
                     await ctx.send(text[i:i+2000])
+
+            voice_client = discord.utils.get(self.bot.voice_clients, guild=ctx.guild)
+
+            if voice_client and voice_client.is_connected():
+                audio_path = generate_speech(text)
+                try:
+                    if not voice_client.is_playing():
+                        voice_client.play(
+                            FFmpegPCMAudio(audio_path, executable=self.ffmpeg_path),
+                            after=lambda e: os.remove(audio_path) if os.path.exists(audio_path) else None
+                        )
+                finally:
+                    if os.path.exists(audio_path) and not voice_client.is_playing():
+                        os.remove(audio_path)
 
         except Exception as e:
             await ctx.send('Ocurrió un error al generar una respuesta.')
