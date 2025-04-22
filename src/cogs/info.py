@@ -1,5 +1,8 @@
+import os
 import discord
+from discord import FFmpegPCMAudio
 import discord.ext
+from ..core.ttsengine import generate_speech
 from discord.ext import commands
 import discord.ext.commands
 
@@ -12,6 +15,7 @@ intents.guilds= True
 class InfoCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.ffmpeg_path = os.getenv("FFMPEG_PATH")
         bot.remove_command('help')
 
     @commands.command()
@@ -64,7 +68,6 @@ class InfoCog(commands.Cog):
             await ctx.send(f'Debes esperar {remaining_time} segundos antes de usar el comando nuevamente.')
 
     @commands.command()
-    @commands.cooldown(1, 60, commands.BucketType.user)
     async def chat(self, ctx, *, mensaje: str = None):
         if not mensaje:
             await ctx.send('Dí algo para que el bot lo replique.')
@@ -72,11 +75,19 @@ class InfoCog(commands.Cog):
         else:
             await ctx.send(mensaje)
 
-    @chat.error
-    async def chat_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-            remaining_time = round(error.retry_after)
-            await ctx.send(f'Debes esperar {remaining_time} segundos antes de usar el comando nuevamente.')
+        voice_client = discord.utils.get(self.bot.voice_clients, guild=ctx.guild)
+
+        if voice_client and voice_client.is_connected():
+            audio_path = generate_speech(mensaje)
+            try:
+                if not voice_client.is_playing():
+                    voice_client.play(
+                        FFmpegPCMAudio(audio_path, executable=self.ffmpeg_path),
+                        after=lambda e: os.remove(audio_path) if os.path.exists(audio_path) else None
+                    )
+            finally:
+                if os.path.exists(audio_path) and not voice_client.is_playing():
+                    os.remove(audio_path)
 
     @commands.command()
     async def avatar(self, ctx, member: discord.Member = None):
