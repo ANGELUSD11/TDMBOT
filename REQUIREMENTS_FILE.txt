@@ -9,7 +9,8 @@ google-api-python-client
 Pillow
 python-dotenv
 tesserocr
-translate 
+translate
+gTTS
 googletrans
 yt-dlp
 google-generativeai
