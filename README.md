@@ -43,6 +43,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 ## Tecnologías y librerías utilizadas⌨️  
 - asyncio(módulo por defecto de Python para manejar concurrencia y asincronismo)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)(librería para cargar variables de entorno)
+- [PyNaCl](https://pypi.org/project/PyNaCl/)(implementación de la librería NaCl para encriptación de datos)
 - [Wikipedia](https://pypi.org/project/wikipedia/)(API de Wikipedia)
 - [praw](https://pypi.org/project/praw/)(API de Reddit)
 - [pillow](https://pypi.org/project/pillow/)(librería para el procesamiento de imágenes)
@@ -111,7 +112,8 @@ In my case, I have integrated this with even more well-known libraries widely us
 
 ## Technologies and Libraries Used⌨️  
 - asyncio (Python’s default module for handling concurrency and asynchronous programming)  
-- [python-dotenv](https://pypi.org/project/python-dotenv/) (library for loading environment variables)  
+- [python-dotenv](https://pypi.org/project/python-dotenv/) (library for loading environment variables)
+- [python-dotenv](https://pypi.org/project/python-dotenv/) (implementation of the NaCl library for data encryption)
 - [Wikipedia](https://pypi.org/project/wikipedia/) (Wikipedia API wrapper)  
 - [praw](https://pypi.org/project/praw/) (Reddit API wrapper)
 - [pillow](https://pypi.org/project/pillow/) (library for image processing)
