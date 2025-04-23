@@ -51,6 +51,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 - [tesserocr](https://pypi.org/project/tesserocr/)(implementación del motor Tesseract-OCR para el procesamiento óptico de carácteres)
 - [yt-dlp](https://pypi.org/project/yt-dlp/)(implementación de la herramienta de CLI yt-dlp, usada para la descarga de videos)
 - [deep-translator](https://pypi.org/project/deep-translator/)(API del traductor de deep)
+- [gTTS](https://pypi.org/project/gTTS/)(Motor de tts de Google para conversión de texto a voz)
 - [google-generativeai](https://pypi.org/project/google-generativeai/)(SDK oficial de Google para interactuar con sus LLMs por medio de su API)
 
 ## Primeros pasos↗️  
@@ -118,7 +119,8 @@ In my case, I have integrated this with even more well-known libraries widely us
 - [google-api-python-client](https://pypi.org/project/google-api-python-client/) (Google API client library)  
 - [tesserocr](https://pypi.org/project/tesserocr/) (Tesseract-OCR engine implementation for optical character recognition)  
 - [yt-dlp](https://pypi.org/project/yt-dlp/) (CLI tool implementation for downloading videos)  
-- [deep-translator](https://pypi.org/project/deep-translator/) (API wrapper for DeepL and other translation services)  
+- [deep-translator](https://pypi.org/project/deep-translator/) (API wrapper for DeepL and other translation services)
+- [gTTS](https://pypi.org/project/gTTS/)(Google TTS engine for text-to-speech conversion)
 - [google-generativeai](https://pypi.org/project/google-generativeai/) (Official Google SDK for interacting with their LLMs via API)
 
 ## Getting Started ↗️  
