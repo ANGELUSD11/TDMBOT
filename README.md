@@ -113,7 +113,7 @@ In my case, I have integrated this with even more well-known libraries widely us
 ## Technologies and Libraries Used⌨️  
 - asyncio (Python’s default module for handling concurrency and asynchronous programming)  
 - [python-dotenv](https://pypi.org/project/python-dotenv/) (library for loading environment variables)
-- [PyNaCl](https://pypi.org/project/python-dotenv/) (implementation of the NaCl library for data encryption)
+- [PyNaCl](https://pypi.org/project/python-dotenv/) (Python wrapper for the NaCl library for data encryption)
 - [Wikipedia](https://pypi.org/project/wikipedia/) (Wikipedia API wrapper)  
 - [praw](https://pypi.org/project/praw/) (Reddit API wrapper)
 - [pillow](https://pypi.org/project/pillow/) (library for image processing)
