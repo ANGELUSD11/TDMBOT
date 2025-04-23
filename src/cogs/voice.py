@@ -29,5 +29,26 @@ class VoiceCog(commands.Cog):
         else:
             await ctx.send("I am not connected to any voice channel.")
 
+    @commands.command()
+    async def stop(self, ctx):
+        voice_client = ctx.voice_client
+
+        if not ctx.author.voice:
+            await ctx.send("You are not connected to a voice channel.")
+            return
+        
+        if ctx.author.voice.channel != voice_client.channel:
+            await ctx.send("You are not in the same voice channel as me.")
+            return
+
+        if voice_client and voice_client.is_connected():
+            if voice_client.is_playing():
+                voice_client.stop()
+                await ctx.send("Stopped audio.")
+            else:
+                await ctx.send("No audio is currently playing")
+        else:
+            await ctx.send("I am not connected to any voice channel.")
+
 async def setup(bot):
     await bot.add_cog(VoiceCog(bot))
