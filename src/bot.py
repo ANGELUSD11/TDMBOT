@@ -6,6 +6,7 @@ from discord.ext import commands
 from discord.ext import tasks
 from dotenv import load_dotenv
 import requests
+import json
 import grpc
 import logging
 logging.basicConfig(level=logging.INFO)
@@ -104,7 +105,7 @@ async def check_new_video():
     url = f'https://www.googleapis.com/youtube/v3/search?key={YOUTUBE_API_KEY}&channelId={CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=1'
     response = requests.get(url)
     data = response.json()
-    print(data)
+    print(json.dumps(data, indent=4, ensure_ascii=False))
 
     if 'items' in data and data['items']:
         latest_video = data['items'][0]
@@ -137,7 +138,7 @@ async def check_live_stream():
     global last_live_id
     response = requests.get(url)
     data = response.json()
-    print(data)
+    print(json.dumps(data, indent=4, ensure_ascii=False))
 
     if 'items' in data and data['items']:
         latest_live = data['items'][0]
