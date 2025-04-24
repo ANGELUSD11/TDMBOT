@@ -80,6 +80,7 @@ class InfoCog(commands.Cog):
 
         if voice_client and voice_client.is_connected():
             audio_path = generate_speech(mensaje)
+            voice_client.audio_path = audio_path 
             try:
                 if not voice_client.is_playing():
                     voice_client.play(
