@@ -274,24 +274,20 @@ class UtilsCog(commands.Cog):
                 image_bytes = img_response.content
 
                 image = Image.open(BytesIO(image_bytes))
-
                 img_iaresponse = model.generate_content([prompt_final, image])
-
                 text = img_iaresponse.text
-
-                for i in range(0, len(text), 2000):
-                    await ctx.send(text[i:i+2000])
-
             else:
                 response = model.generate_content(prompt_final)
                 text = response.text
-                for i in range(0, len(text), 2000):
-                    await ctx.send(text[i:i+2000])
+
+            for i in range(0, len(text), 2000):
+                await ctx.send(text[i:i+2000])
 
             voice_client = discord.utils.get(self.bot.voice_clients, guild=ctx.guild)
 
             if voice_client and voice_client.is_connected():
                 audio_path = generate_speech(text)
+                voice_client.audio_path = audio_path 
                 try:
                     if not voice_client.is_playing():
                         voice_client.play(
@@ -303,7 +299,7 @@ class UtilsCog(commands.Cog):
                         os.remove(audio_path)
 
         except Exception as e:
-            await ctx.send('Ocurrió un error al generar una respuesta.')
+            await ctx.send('An error occurred while processing your request.')
             print(e)
 
 async def setup(bot):
