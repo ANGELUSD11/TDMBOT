@@ -1,5 +1,6 @@
 import discord
 import discord.ext
+import asyncio
 from discord.ext import commands
 import wikipedia
 
