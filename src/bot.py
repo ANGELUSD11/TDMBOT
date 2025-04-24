@@ -6,6 +6,7 @@ from discord.ext import commands
 from discord.ext import tasks
 from dotenv import load_dotenv
 import requests
+import asyncio
 import json
 import grpc
 import logging
