@@ -42,6 +42,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 
 ## Tecnologías y librerías utilizadas⌨️  
 - asyncio(módulo por defecto de Python para manejar concurrencia y asincronismo)
+- [Discord.py](https://pypi.org/project/discord.py/) (API de Discord)
 - [python-dotenv](https://pypi.org/project/python-dotenv/)(librería para cargar variables de entorno)
 - [PyNaCl](https://pypi.org/project/PyNaCl/)(implementación de la librería NaCl para encriptación de datos)
 - [Wikipedia](https://pypi.org/project/wikipedia/)(API de Wikipedia)
@@ -111,7 +112,8 @@ In my case, I have integrated this with even more well-known libraries widely us
 - For ```>ocr```, you must use the language codes used in [Tesseract's traineddata](https://github.com/tesseract-ocr/tessdata) files
 
 ## Technologies and Libraries Used⌨️  
-- asyncio (Python’s default module for handling concurrency and asynchronous programming)  
+- asyncio (Python’s default module for handling concurrency and asynchronous programming)
+- [Discord.py](https://pypi.org/project/discord.py/) (Discord API wrapper)
 - [python-dotenv](https://pypi.org/project/python-dotenv/) (library for loading environment variables)
 - [PyNaCl](https://pypi.org/project/python-dotenv/) (Python wrapper for the NaCl library for data encryption)
 - [Wikipedia](https://pypi.org/project/wikipedia/) (Wikipedia API wrapper)  
