@@ -172,7 +172,6 @@ class UtilsCog(commands.Cog):
             print(f"Ocurrió un error: {e}")
 
     @commands.command()
-    @commands.cooldown(rate=1, per=600, type=commands.BucketType.user)
     async def translate(self, ctx, lang: str, *, text: str=None):
         #this list contains all the valid language codes
         valid_lang = ['aa', 'ab', 'ae', 'af', 'ak', 'am', 'an', 'ar', 'as',
@@ -215,12 +214,6 @@ class UtilsCog(commands.Cog):
         except Exception as e:
             await ctx.send('Ocurrió un error al traducir, intentelo más tarde.')
             print(e)
-
-    @translate.error
-    async def translate_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-            remaining_time = round(error.retry_after)
-            await ctx.send(f'Debes esperar {remaining_time} segundos antes de usar el comando nuevamente.')
 
     @commands.command()
     async def translateinfo(self, ctx):
