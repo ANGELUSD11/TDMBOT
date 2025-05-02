@@ -57,7 +57,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 - [google-generativeai](https://pypi.org/project/google-generativeai/)(SDK oficial de Google para interactuar con sus LLMs por medio de su API)
 
 ## Primeros pasos↗️  
-Puedes invitar el bot a tu servidor mediante el [enlace de invitación](https://discord.com/oauth2/authorize?client_id=1146866029708984331) de manera sencilla, sin embargo, si quieres levantar el proyecto localmente usando todos tus tokens, puedes hacerlo de la siguiente manera:  
+Puedes invitar el bot a tu servidor mediante el [enlace de invitación](https://discord.com/oauth2/authorize?client_id=1367861699683549276) de manera sencilla, sin embargo, si quieres levantar el proyecto localmente usando todos tus tokens, puedes hacerlo de la siguiente manera:  
 1. Asegúrate de tener Python correctamente instalado y configurado en tu IDE favorito😃  
 2. Clona el repositorio o descarga el fichero
 ```bash
@@ -128,7 +128,7 @@ In my case, I have integrated this with even more well-known libraries widely us
 - [google-generativeai](https://pypi.org/project/google-generativeai/) (Official Google SDK for interacting with their LLMs via API)
 
 ## Getting Started ↗️  
-You can easily invite the bot to your server using the [invitation link](https://discord.com/oauth2/authorize?client_id=1146866029708984331).  
+You can easily invite the bot to your server using the [invitation link](https://discord.com/oauth2/authorize?client_id=1367861699683549276).  
 However, if you want to run the project locally using your own tokens, you can do so as follows:  
 
 1. Make sure you have Python properly installed and configured in your favorite IDE 😃  
