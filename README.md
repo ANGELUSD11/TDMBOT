@@ -28,6 +28,7 @@ TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la libr
 >ocr(language code): Extrae texto de imágenes en distintos idiomas, especificados con su código de idioma
 >translate(language: text): Traduce texto en distintos idiomas especificado el código de idioma a traducir
 >dl(url): Descarga video de distintos sitios web y lo muestra en chat
+>join/leave/stop: Comandos para usar en los canales de voz
 ```
 
 
@@ -99,6 +100,7 @@ In my case, I have integrated this with even more well-known libraries widely us
 >ocr(language code): Extracts text from images in different languages, specified by their language code
 >translate(language: text): Translates text into different languages using the target language code
 >dl(url): Downloads a video from various websites and sends it in the chat
+>join/leave/stop: Commands to use in Bot channels
 ```
 
 
