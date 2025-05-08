@@ -10,6 +10,7 @@ import asyncio
 import yt_dlp
 from deep_translator import GoogleTranslator
 from PIL import Image
+import io
 from io import BytesIO
 import google.generativeai as genai
 
@@ -108,68 +109,72 @@ class UtilsCog(commands.Cog):
 
     @commands.command()
     async def dl(self, ctx, url: str):
-        frames = [
-            "[          ] 0%",
-            "[=         ] 10%",
-            "[==        ] 20%",
-            "[===       ] 30%",
-            "[====      ] 40%",
-            "[=====     ] 50%",
-            "[======    ] 60%",
-            "[=======   ] 70%",
-            "[========  ] 80%",
-            "[========= ] 90%",
-            "[==========] 100%"
-        ]
-
-        loading_message = await ctx.send('Downloading...')
-        for frame in frames:
-        # Edit the message with the current loading frame
-            await loading_message.edit(content=f'Downloading... {frame}')
-            await asyncio.sleep(0.3)
-        await loading_message.edit(content='Download complete!')
-
-        def progress_hook(d):
-            if d['status'] == 'finished':
-                print(f"Finished downloading: {d['filename']}")
-
-        #options for downloads
-        if 'instagram.com' in url:
+        # Detectar la plataforma y configurar las opciones adecuadas
+        if 'x.com' in url or 'twitter.com' in url:
             ydl_opts = {
-                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
-                'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
+                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',
                 'ffmpeg_location': '/home/container/ffmpeg/bin',
                 'noplaylist': True,
-                'progress_hooks': [progress_hook]
+                'merge_output_format': 'mp4',
+                'outtmpl': '%(id)s.%(ext)s',  # Guarda con el ID del video
+                'quiet': True,
             }
-            
+        elif 'instagram.com' in url:
+            ydl_opts = {
+                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',
+                'ffmpeg_location': '/home/container/ffmpeg/bin',
+                'noplaylist': True,
+                'outtmpl': '%(id)s.%(ext)s',
+                'quiet': True,
+            }
         else:
             ydl_opts = {
-                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',  # Cambiado para evitar fusión
-                'outtmpl': './%(title)s.%(ext)s',  # Guarda el video en el directorio actual con el nombre del título
+                'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best',
                 'ffmpeg_location': '/home/container/ffmpeg/bin',
                 'noplaylist': True,
-                'progress_hooks': [progress_hook]
+                'outtmpl': '%(id)s.%(ext)s',
+                'quiet': True,
             }
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([url])
-        
-            filename = f"{ydl.prepare_filename(ydl.extract_info(url))}"
-        
-            # Verify if the file exist
+                info = ydl.extract_info(url, download=True)
+
+                # En caso de playlist, tomar solo el primer video
+                if 'entries' in info:
+                    info = info['entries'][0]
+
+                # Obtener el nombre del archivo descargado
+                filename = ydl.prepare_filename(info)
+
+            # Verificar si el archivo existe
             if os.path.exists(filename):
-                with open(filename, 'rb') as file:
-                    await ctx.send(file=discord.File(file, filename=filename))
+                # Verificar tamaño del archivo
+                if os.path.getsize(filename) > 8 * 1024 * 1024:
+                    await ctx.send("⚠️ El archivo es demasiado grande para enviarse por Discord (8 MB).")
+                    os.remove(filename)
+                    return
+
+                # Enviar el archivo al canal de Discord
+                with open(filename, 'rb') as f:
+                    await ctx.send(file=discord.File(f, filename=os.path.basename(filename)))
+
+                # Eliminar el archivo después de enviarlo
                 os.remove(filename)
+
             else:
-                await ctx.send("No se pudo encontrar el archivo descargado.")
+                await ctx.send("❌ No se encontró el archivo descargado.")
 
         except Exception as e:
-            embed = discord.Embed(title='❌ERROR!', description=f'No se pudo enviar el video, puede que sea muy largo o pesado\n {e}', color=discord.Color.red())
+            embed = discord.Embed(
+                title='❌ ¡ERROR!',
+                description=f'No se pudo enviar el video, puede que sea muy largo o pesado.\n\n**Error:** `{str(e)}`',
+                color=discord.Color.red()
+            )
             await ctx.send(embed=embed)
-            print(f"Ocurrió un error: {e}")
+            print(f"[ERROR] Ocurrió un error al intentar descargar el video: {e}")
+
+
 
     @commands.command()
     async def translate(self, ctx, lang: str, *, text: str=None):
