@@ -47,27 +47,6 @@ class UtilsCog(commands.Cog):
         if lang not in idiomas_disponibles:
             await ctx.send(f"❌ Idioma no válido. Usa: {', '.join(idiomas_disponibles)}.")
             return
-        
-        frames = [
-            "[          ] 0%",
-            "[=         ] 10%",
-            "[==        ] 20%",
-            "[===       ] 30%",
-            "[====      ] 40%",
-            "[=====     ] 50%",
-            "[======    ] 60%",
-            "[=======   ] 70%",
-            "[========  ] 80%",
-            "[========= ] 90%",
-            "[==========] 100%"
-        ]
-        
-        loading_message = await ctx.send('Thinking...')
-
-        for frame in frames:
-            await loading_message.edit(content=f'Downloading image... {frame}')
-            await asyncio.sleep(0.3)
-        await loading_message.edit(content='Processing image...')
 
         if ctx.message.attachments:
             image_url = ctx.message.attachments[0].url
