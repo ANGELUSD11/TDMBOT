@@ -1,4 +1,4 @@
-**💠TDMBOT Discord Bot💠** 
+## **💠TDMBOT Discord Bot💠**  
 Made with Python and Discord.py  
 ![Preview](images/2025-04-17_17-42.png)
 
