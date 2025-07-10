@@ -76,6 +76,9 @@ Este script contiene un bucle for que recorre todos los módulos del bot dividid
 ---
 
 ## EN🇺🇸  
+## Documentation📚  
+Using the DeepWiki webpage, the Devin AI model generated detailed documentation of the technical process throughout the development flow, you will find it at the following link:  
+[RobtopLvlIdentifier Docs](https://deepwiki.com/ANGELUSD11/TDMBOT)  
 ### What is TDMBOT💠?
 TDMBOT💠 is a Discord bot built from scratch using Python and the [Discord.py](https://discordpy.readthedocs.io/en/stable/) library far the top choice for developing Discord bots with this amazing language🐍. This powerful open-source library offers full and functional integration with the Discord API, allowing us to create bots easily. Its syntax and classes allow interaction with everything Discord has to offer when building applications.
 In my case, I have integrated this with even more well-known libraries widely used in the Python ecosystem to give the bot interesting capabilities, such as AI-generated messages via Google's Gemini API🧠. Below, I’ll explain all the commands the bot currently offers.
