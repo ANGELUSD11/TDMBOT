@@ -3,10 +3,9 @@ import discord
 from discord.ext import commands, tasks
 from dotenv import load_dotenv
 import logging
-logging.basicConfig(level=logging.INFO)
 import datetime
-import logging
 
+logging.basicConfig(level=logging.INFO)
 load_dotenv()
 
 intents = discord.Intents.default()
