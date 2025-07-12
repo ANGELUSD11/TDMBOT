@@ -37,7 +37,7 @@ class EventsCog(commands.Cog):
             channel = self.bot.get_channel(int(self.general_channel_id))
             if channel:
                 age = now.year - 2005
-                await channel.send(f"¡Hoy es el cumpleaños de Angelus, felicítenlo por sus {age} años! 🎉")
+                await channel.send(f"@everyone ¡Hoy es el cumpleaños de Angelus, felicítenlo por sus {age} años! 🎉")
                 self.birthday_reminder.stop()
 
     @birthday_reminder.before_loop
