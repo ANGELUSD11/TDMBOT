@@ -5,6 +5,9 @@ Made with Python and Discord.py
 ---
 
 ## ES🇪🇸  
+## Documentación📚  
+Using la página de [DeepWiki](https://deepwiki.com/), el modelo DevinAI me ha generado una documentación completa y descriptiva de todo el proyecto, la cual podrán consultar mediante el siguiente enlace:  
+[TDMBOT Docs](https://deepwiki.com/ANGELUSD11/TDMBOT)  
 ### ¿Qué es TDMBOT💠?  
 TDMBOT💠 es un bot de discord creado desde 0 con Python y con ayuda de la librería [Discord.py](https://discordpy.readthedocs.io/en/stable/), la opción por excelencia para desarrollar bots de discord con este maravilloso lenguaje🐍, esta potente librería Open Source ofrece una integración completa y funcional con la API de Discord permitiéndonos crear nuestros bots de manera sencilla, su sintaxis y sus clases nos servirán para interactuar con todo lo que tiene Discord para ofrecernos al crear nuestras aplicaciones, en mi caso he integrado todo esto con aún más librerías conocidas, usadas mucho en el ecosistema de Python con la finalidad de dotar al bot de funcionalidades interesantes, como mensajes generados por IA gracias a la API del modelo Gémini de Google🧠, a continuación explicaré todos los comandos que hasta ahora el bot tiene para ofrecer.  
 
@@ -77,7 +80,7 @@ Este script contiene un bucle for que recorre todos los módulos del bot dividid
 
 ## EN🇺🇸  
 ## Documentation📚  
-Using the DeepWiki webpage, the Devin AI model generated detailed documentation of the technical process throughout the development flow, you will find it at the following link:  
+Using the [DeepWiki](https://deepwiki.com/) webpage, the Devin AI model generated detailed documentation of the technical process throughout the development flow, you will find it at the following link:  
 [TDMBOT Docs](https://deepwiki.com/ANGELUSD11/TDMBOT)  
 ### What is TDMBOT💠?
 TDMBOT💠 is a Discord bot built from scratch using Python and the [Discord.py](https://discordpy.readthedocs.io/en/stable/) library far the top choice for developing Discord bots with this amazing language🐍. This powerful open-source library offers full and functional integration with the Discord API, allowing us to create bots easily. Its syntax and classes allow interaction with everything Discord has to offer when building applications.
