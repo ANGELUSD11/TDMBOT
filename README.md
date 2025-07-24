@@ -78,7 +78,7 @@ Este script contiene un bucle for que recorre todos los módulos del bot dividid
 ## Configuración inicial Discord.py  
 Esta sección proporciona instrucciones paso a paso para instalar y configurar un bot de discord usando esta tecnología, desde la instalación inicial hasta la primera ejecución.Configuración necesaria para un bot multifuncional para Discord desarrollado con Python y discord.py.
 
-Antes que nada, asegúrate de tener instalada la librería de Discord.py para acceder a todas las funcionalidades de su API: [repositorio de Pypi](https://pypi.org/project/discord.py/)
+Antes que nada, asegúrate de tener instalada la librería de Discord.py para acceder a todas las funcionalidades de su API: [repositorio de PyPi](https://pypi.org/project/discord.py/)
 ```bash
 pip install discord.py
 ```
