@@ -277,7 +277,7 @@ class UtilsCog(commands.Cog):
 
         except Exception as e:
             await ctx.send('An error occurred while processing your request.')
-            print(e)
+            print(f"[ERROR] A error occurred in the AI command:\n{e}")
 
 async def setup(bot):
     await bot.add_cog(UtilsCog(bot))
