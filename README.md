@@ -181,3 +181,13 @@ pip install requirements.txt
 (Careful 👀, remember these are sensitive values and should not be exposed)
 5. Run the ```bot.py``` script located in ```/src/bot.py```
 This script contains a for loop that loads all the bot’s modules (organized in cogs) and then logs in the terminal if they were loaded successfully.
+
+## Initial Discord.py Setup
+This section provides step-by-step instructions for installing and configuring a discord bot using this technology, from the initial
+installation to the first run.
+
+Required configuration for a multifunctional Discord bot developed with Python and discord.py.
+First of all, make sure you have the Discord.py library installed to access all the features of its API: [PypI repository](https://pypi.org/project/discord.py/)
+```bash
+pip install discord.py
+```  
