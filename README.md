@@ -76,9 +76,33 @@ pip install requirements.txt
 Este script contiene un bucle for que recorre todos los módulos del bot divididos en cogs y luego informa en terminal si se ejecutaron correctamente.
 
 ## Configuración inicial Discord.py  
-Antes que nada, asegúrate de tener instalada la librería de Discord.py para acceder a todas las funcionalidades de su API usando Python
+Esta sección proporciona instrucciones paso a paso para instalar y configurar un bot de discord usando esta tecnología, desde la instalación inicial hasta la primera ejecución.Configuración necesaria para un bot multifuncional para Discord desarrollado con Python y discord.py.
+
+Antes que nada, asegúrate de tener instalada la librería de Discord.py para acceder a todas las funcionalidades de su API: [repositorio de Pypi](https://pypi.org/project/discord.py/)
 ```bash
 pip install discord.py
+```
+Luego, dentro de tu proyecto, crea un script inicial e importa la librería junto con los módulos que necesites
+
+Módulo general:
+```python
+import discord
+```
+
+Módulo para utilidades de comandos:
+```python
+import discord.ext
+from discord.ext import commands
+```
+
+Recomiendo importar el módulo os que provee Python para trabajar con rutas de archivos:
+```python
+import os
+```
+
+Recomiendo importar el módulo json para trabajar con estos formatos si vas a consumir apis:
+```python
+import json
 ```
 
 ---
