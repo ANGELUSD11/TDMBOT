@@ -191,3 +191,7 @@ First of all, make sure you have the Discord.py library installed to access all 
 ```bash
 pip install discord.py
 ```  
+Then, inside your project create an inicial script bot.py and import the library along with the other modules that you need.
+```python
+import discord
+```  
