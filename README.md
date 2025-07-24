@@ -195,3 +195,9 @@ Then, inside your project create an inicial script bot.py and import the library
 ```python
 import discord
 ```  
+
+Module for commands utilities
+```python
+import discord.ext
+from discord.ext import commands
+```  
