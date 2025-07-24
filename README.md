@@ -75,6 +75,11 @@ pip install requirements.txt
 5. Ejecuta el script ```bot.py``` que se encuentra en ```/src/bot.py```  
 Este script contiene un bucle for que recorre todos los módulos del bot divididos en cogs y luego informa en terminal si se ejecutaron correctamente.
 
+## Configuración inicial Discord.py  
+Antes que nada, asegúrate de tener instalada la librería de Discord.py para acceder a todas las funcionalidades de su API usando Python
+```bash
+pip install discord.py
+```
 
 ---
 
