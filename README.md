@@ -187,7 +187,7 @@ This section provides step-by-step instructions for installing and configuring a
 installation to the first run.
 
 Required configuration for a multifunctional Discord bot developed with Python and discord.py.
-First of all, make sure you have the Discord.py library installed to access all the features of its API: [PypI repository](https://pypi.org/project/discord.py/)
+First of all, make sure you have the Discord.py library installed to access all the features of its API: [PyPI repository](https://pypi.org/project/discord.py/)
 ```bash
 pip install discord.py
 ```  
