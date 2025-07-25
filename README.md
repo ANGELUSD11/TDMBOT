@@ -200,4 +200,10 @@ Module for commands utilities
 ```python
 import discord.ext
 from discord.ext import commands
+```
+
+Module fot tts ffmpeg encoder for voice chat utilities
+```python
+import discord
+from discord import FFmpegPCMaudio
 ```  
