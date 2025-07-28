@@ -240,7 +240,7 @@ class UtilsCog(commands.Cog):
         try:
             contexto_base = (
                 "Estás integrada en un bot de Discord desarrollado por ANGELUS11, un desarrollador colombiano. "
-                "Responde siempre de forma clara, concisa y útil. "
+                "Responde siempre de forma clara, concisa y útil ante las dudas de los usuarios. "
             )
 
             prompt_final = f'{contexto_base} Usuario: {prompt}'
