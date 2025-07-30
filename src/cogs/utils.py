@@ -13,6 +13,7 @@ from PIL import Image
 import io
 from io import BytesIO
 import google.generativeai as genai
+from google.api_core.exceptions import ResourceExhausted
 
 intents = discord.Intents.default()
 intents.message_content = True
@@ -274,6 +275,11 @@ class UtilsCog(commands.Cog):
                 finally:
                     if os.path.exists(audio_path) and not voice_client.is_playing():
                         os.remove(audio_path)
+                        
+        except ResourceExhausted as e:
+            await ctx.send('⚠️ La IA ha alcanzado su límite de uso. Inténtalo más tarde.')
+            await asyncio.sleep(55)
+            print(f"[ERROR] ResourceExhausted error in the AI command: {e}")
 
         except Exception as e:
             await ctx.send('An error occurred while processing your request.')
