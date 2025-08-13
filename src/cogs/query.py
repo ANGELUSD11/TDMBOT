@@ -1,11 +1,11 @@
 import discord
-import discord.ext
 from dotenv import load_dotenv
-import asyncio
 import os
 from discord.ext import commands
 import requests
 import googleapiclient.discovery
+
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.message_content = True
