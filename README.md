@@ -206,7 +206,13 @@ Module fot tts ffmpeg encoder for voice chat utilities
 ```python
 import discord
 from discord import FFmpegPCMaudio
-```  
+```
+
+I recommend importing the os module provided by Python to work with file paths  
+```python
+import os
+```
+
 ### Intents
 In Discord, intents are settings that allow bots to specify what types of server events they need to receive, by defining intents, developers can reduce the amount of unnecessary information the bot receives, improving performance and reducing server resource usage.
 
