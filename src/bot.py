@@ -1,7 +1,5 @@
 import os
 import discord
-import discord.ext
-import discord.ext.commands
 from discord.ext import commands
 from discord.ext import tasks
 from dotenv import load_dotenv
