@@ -19,7 +19,6 @@ class QueryCog(commands.Cog):
         self.youtube_api_key = os.getenv("YOUTUBE_API_KEY")
         self.search_api_key = os.getenv("SEARCH_API_KEY")
         self.cse_id = os.getenv("CSE_ID")
-        youtube = googleapiclient.discovery.build('youtube', 'v3', developerKey = self.youtube_api_key)
 
     @commands.command()
     async def yt(self, ctx, *, search_query=None):
