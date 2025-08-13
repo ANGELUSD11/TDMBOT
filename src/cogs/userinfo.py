@@ -1,9 +1,6 @@
 import os
 import discord
-import discord.ext
-import asyncio
 from discord.ext import commands
-import discord.ext.commands
 
 intents = discord.Intents.default()
 intents.message_content = True
