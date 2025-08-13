@@ -214,7 +214,7 @@ In Discord, intents are settings that allow bots to specify what types of server
 intents = discord.intents.default()
 ```
 
-Before, this can access to several modules from discord with a boolean value.
+After, this can access to several modules from discord with a boolean value.
 
 ```python
 intents.message.content = True
