@@ -1,10 +1,5 @@
 import os
-import asyncio
-import discord
-import discord.ext
 from discord.ext import commands
-import discord.ext.commands
-from discord import FFmpegPCMAudio
 
 class VoiceCog(commands.Cog):
     def __init__(self, bot):
